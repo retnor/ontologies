@@ -1,0 +1,952 @@
+@prefix : <http://www.vhynaulia.com/revalina/ontologies/2016/10/pwidas#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix swrl: <http://www.w3.org/2003/11/swrl#> .
+@prefix swrla: <http://swrl.stanford.edu/ontologies/3.3/swrla.owl#> .
+@prefix swrlb: <http://www.w3.org/2003/11/swrlb#> .
+@prefix pwidas: <http://www.vhynaulia.com/revalina/ontologies/2016/10/pwidas#> .
+@prefix pwidas2: <http://www.semanticweb.org/revalina/ontologies/2016/10/pwidas#> .
+@base <http://www.vhynaulia.com/revalina/ontologies/2016/10/pwidas> .
+
+<http://www.vhynaulia.com/revalina/ontologies/2016/10/pwidas> rdf:type owl:Ontology .
+
+#################################################################
+#    Annotation properties
+#################################################################
+
+###  http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled
+swrla:isRuleEnabled rdf:type owl:AnnotationProperty .
+
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://www.vhynaulia.com/revalina/ontologies/2016/10/pwidas#accessDuring
+pwidas:accessDuring rdf:type owl:ObjectProperty ;
+                    rdfs:domain pwidas:Country ,
+                                pwidas:Geocodes ,
+                                pwidas:Person ;
+                    rdfs:range pwidas:Climate .
+
+
+###  http://www.vhynaulia.com/revalina/ontologies/2016/10/pwidas#hasDevelopmentStage
+pwidas:hasDevelopmentStage rdf:type owl:ObjectProperty ;
+                           rdfs:domain pwidas:Person ;
+                           rdfs:range pwidas:DevelopmentStage .
+
+
+###  http://www.vhynaulia.com/revalina/ontologies/2016/10/pwidas#hasExistingIllness
+pwidas:hasExistingIllness rdf:type owl:ObjectProperty ;
+                          rdfs:domain pwidas:Person ;
+                          rdfs:range pwidas:PreExistingIllness .
+
+
+###  http://www.vhynaulia.com/revalina/ontologies/2016/10/pwidas#hasGender
+pwidas:hasGender rdf:type owl:ObjectProperty ;
+                 rdfs:domain pwidas:Person ;
+                 rdfs:range pwidas:Gender .
+
+
+###  http://www.vhynaulia.com/revalina/ontologies/2016/10/pwidas#hasHabits
+pwidas:hasHabits rdf:type owl:ObjectProperty ;
+                 rdfs:domain pwidas:Person ;
+                 rdfs:range pwidas:Habits .
+
+
+###  http://www.vhynaulia.com/revalina/ontologies/2016/10/pwidas#hasProfession
+pwidas:hasProfession rdf:type owl:ObjectProperty ;
+                     rdfs:domain pwidas:Person ;
+                     rdfs:range pwidas:Profession .
+
+
+###  http://www.vhynaulia.com/revalina/ontologies/2016/10/pwidas#hasRiskOf
+pwidas:hasRiskOf rdf:type owl:ObjectProperty ;
+                 rdfs:domain pwidas:Person ;
+                 rdfs:range pwidas:InfectiousDiseases .
+
+
+###  http://www.vhynaulia.com/revalina/ontologies/2016/10/pwidas#liveAround
+pwidas:liveAround rdf:type owl:ObjectProperty ;
+                  rdfs:subPropertyOf owl:topObjectProperty ;
+                  rdfs:domain pwidas:Person ;
+                  rdfs:range pwidas:Features .
+
+
+###  http://www.vhynaulia.com/revalina/ontologies/2016/10/pwidas#liveIn
+pwidas:liveIn rdf:type owl:ObjectProperty ;
+              rdfs:subPropertyOf owl:topObjectProperty ;
+              rdfs:domain pwidas:Person ;
+              rdfs:range pwidas:Country .
+
+
+###  http://www.vhynaulia.com/revalina/ontologies/2016/10/pwidas#reportSymptoms
+pwidas:reportSymptoms rdf:type owl:ObjectProperty ;
+                      rdfs:domain pwidas:Person ;
+                      rdfs:range pwidas:Symptom .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  http://www.vhynaulia.com/revalina/ontologies/2016/10/pwidas#decreaseRisk
+pwidas:decreaseRisk rdf:type owl:DatatypeProperty ;
+                    rdfs:domain pwidas:InfectiousDiseases ;
+                    rdfs:range xsd:float .
+
+
+###  http://www.vhynaulia.com/revalina/ontologies/2016/10/pwidas#hasAgeInteger
+pwidas:hasAgeInteger rdf:type owl:DatatypeProperty ;
+                     rdfs:domain pwidas:Age ;
+                     rdfs:range xsd:int .
+
+
+###  http://www.vhynaulia.com/revalina/ontologies/2016/10/pwidas#hasGeocodes
+pwidas:hasGeocodes rdf:type owl:DatatypeProperty ;
+                   rdfs:domain pwidas:Features ,
+                               pwidas:Location ,
+                               pwidas:Person ;
+                   rdfs:range xsd:long .
+
+
+###  http://www.vhynaulia.com/revalina/ontologies/2016/10/pwidas#hasLatitudes
+pwidas:hasLatitudes rdf:type owl:DatatypeProperty ;
+                    rdfs:subPropertyOf pwidas:hasGeocodes ;
+                    rdfs:domain pwidas:Geocodes ;
+                    rdfs:range xsd:long .
+
+
+###  http://www.vhynaulia.com/revalina/ontologies/2016/10/pwidas#hasLongitudes
+pwidas:hasLongitudes rdf:type owl:DatatypeProperty ;
+                     rdfs:subPropertyOf pwidas:hasGeocodes ;
+                     rdfs:domain pwidas:Geocodes ;
+                     rdfs:range xsd:long .
+
+
+###  http://www.vhynaulia.com/revalina/ontologies/2016/10/pwidas#hasRiskRatio
+pwidas:hasRiskRatio rdf:type owl:DatatypeProperty ;
+                    rdfs:domain pwidas:InfectiousDiseases ;
+                    rdfs:range xsd:float .
+
+
+###  http://www.vhynaulia.com/revalina/ontologies/2016/10/pwidas#increaseRisk
+pwidas:increaseRisk rdf:type owl:DatatypeProperty ;
+                    rdfs:domain pwidas:InfectiousDiseases ;
+                    rdfs:range xsd:float .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://www.vhynaulia.com/revalina/ontologies/2016/10/pwidas#Age
+pwidas:Age rdf:type owl:Class ;
+           rdfs:subClassOf pwidas:Person .
+
+
+###  http://www.vhynaulia.com/revalina/ontologies/2016/10/pwidas#Climate
+pwidas:Climate rdf:type owl:Class ;
+               rdfs:subClassOf pwidas:Environment .
+
+
+###  http://www.vhynaulia.com/revalina/ontologies/2016/10/pwidas#Country
+pwidas:Country rdf:type owl:Class ;
+               rdfs:subClassOf pwidas:Location .
+
+
+###  http://www.vhynaulia.com/revalina/ontologies/2016/10/pwidas#DevelopmentStage
+pwidas:DevelopmentStage rdf:type owl:Class ;
+                        rdfs:subClassOf pwidas:Person .
+
+
+###  http://www.vhynaulia.com/revalina/ontologies/2016/10/pwidas#Environment
+pwidas:Environment rdf:type owl:Class .
+
+
+###  http://www.vhynaulia.com/revalina/ontologies/2016/10/pwidas#Features
+pwidas:Features rdf:type owl:Class ;
+                rdfs:subClassOf pwidas:Environment .
+
+
+###  http://www.vhynaulia.com/revalina/ontologies/2016/10/pwidas#Gender
+pwidas:Gender rdf:type owl:Class ;
+              rdfs:subClassOf pwidas:Person .
+
+
+###  http://www.vhynaulia.com/revalina/ontologies/2016/10/pwidas#Geocodes
+pwidas:Geocodes rdf:type owl:Class .
+
+
+###  http://www.vhynaulia.com/revalina/ontologies/2016/10/pwidas#Habits
+pwidas:Habits rdf:type owl:Class ;
+              rdfs:subClassOf pwidas:Person .
+
+
+###  http://www.vhynaulia.com/revalina/ontologies/2016/10/pwidas#Hemisphere
+pwidas:Hemisphere rdf:type owl:Class ;
+                  rdfs:subClassOf pwidas:Location .
+
+
+###  http://www.vhynaulia.com/revalina/ontologies/2016/10/pwidas#InfectiousDiseases
+pwidas:InfectiousDiseases rdf:type owl:Class ;
+                          owl:disjointWith pwidas:PreExistingIllness .
+
+
+###  http://www.vhynaulia.com/revalina/ontologies/2016/10/pwidas#Location
+pwidas:Location rdf:type owl:Class ;
+                rdfs:subClassOf pwidas:Environment .
+
+
+###  http://www.vhynaulia.com/revalina/ontologies/2016/10/pwidas#ManMade
+pwidas:ManMade rdf:type owl:Class ;
+               rdfs:subClassOf pwidas:Features .
+
+
+###  http://www.vhynaulia.com/revalina/ontologies/2016/10/pwidas#Natural
+pwidas:Natural rdf:type owl:Class ;
+               rdfs:subClassOf pwidas:Features .
+
+
+###  http://www.vhynaulia.com/revalina/ontologies/2016/10/pwidas#Person
+pwidas:Person rdf:type owl:Class .
+
+
+###  http://www.vhynaulia.com/revalina/ontologies/2016/10/pwidas#PreExistingIllness
+pwidas:PreExistingIllness rdf:type owl:Class ;
+                          rdfs:subClassOf pwidas:Person .
+
+
+###  http://www.vhynaulia.com/revalina/ontologies/2016/10/pwidas#Profession
+pwidas:Profession rdf:type owl:Class ;
+                  rdfs:subClassOf pwidas:Person .
+
+
+###  http://www.vhynaulia.com/revalina/ontologies/2016/10/pwidas#Season
+pwidas:Season rdf:type owl:Class ;
+              rdfs:subClassOf pwidas:Climate .
+
+
+###  http://www.vhynaulia.com/revalina/ontologies/2016/10/pwidas#Symptom
+pwidas:Symptom rdf:type owl:Class ;
+               rdfs:subClassOf pwidas:Person .
+
+
+###  http://www.vhynaulia.com/revalina/ontologies/2016/10/pwidas#Weather
+pwidas:Weather rdf:type owl:Class ;
+               rdfs:subClassOf pwidas:Climate .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  http://www.vhynaulia.com/revalina/ontologies/2016/10/pwidas#Adolescence
+pwidas:Adolescence rdf:type owl:NamedIndividual ,
+                            pwidas:DevelopmentStage .
+
+
+###  http://www.vhynaulia.com/revalina/ontologies/2016/10/pwidas#Adults
+pwidas:Adults rdf:type owl:NamedIndividual ,
+                       pwidas:DevelopmentStage .
+
+
+###  http://www.vhynaulia.com/revalina/ontologies/2016/10/pwidas#Anthrax
+pwidas:Anthrax rdf:type owl:NamedIndividual ,
+                        pwidas:InfectiousDiseases .
+
+
+###  http://www.vhynaulia.com/revalina/ontologies/2016/10/pwidas#Autumn
+pwidas:Autumn rdf:type owl:NamedIndividual ,
+                       pwidas:Environment ,
+                       pwidas:Season .
+
+
+###  http://www.vhynaulia.com/revalina/ontologies/2016/10/pwidas#Children
+pwidas:Children rdf:type owl:NamedIndividual ,
+                         pwidas:DevelopmentStage .
+
+
+###  http://www.vhynaulia.com/revalina/ontologies/2016/10/pwidas#Cold
+pwidas:Cold rdf:type owl:NamedIndividual ,
+                     pwidas:Weather .
+
+
+###  http://www.vhynaulia.com/revalina/ontologies/2016/10/pwidas#Cough
+pwidas:Cough rdf:type owl:NamedIndividual ,
+                      pwidas:Symptom .
+
+
+###  http://www.vhynaulia.com/revalina/ontologies/2016/10/pwidas#EatingMeats
+pwidas:EatingMeats rdf:type owl:NamedIndividual ,
+                            pwidas:Habits .
+
+
+###  http://www.vhynaulia.com/revalina/ontologies/2016/10/pwidas#EatingPoultry
+pwidas:EatingPoultry rdf:type owl:NamedIndividual ,
+                              pwidas:Habits .
+
+
+###  http://www.vhynaulia.com/revalina/ontologies/2016/10/pwidas#Elderly
+pwidas:Elderly rdf:type owl:NamedIndividual ,
+                        pwidas:DevelopmentStage .
+
+
+###  http://www.vhynaulia.com/revalina/ontologies/2016/10/pwidas#Equatorial
+pwidas:Equatorial rdf:type owl:NamedIndividual ,
+                           pwidas:Hemisphere .
+
+
+###  http://www.vhynaulia.com/revalina/ontologies/2016/10/pwidas#Farmers
+pwidas:Farmers rdf:type owl:NamedIndividual ,
+                        pwidas:Profession .
+
+
+###  http://www.vhynaulia.com/revalina/ontologies/2016/10/pwidas#Farms
+pwidas:Farms rdf:type owl:NamedIndividual ,
+                      pwidas:ManMade .
+
+
+###  http://www.vhynaulia.com/revalina/ontologies/2016/10/pwidas#Female
+pwidas:Female rdf:type owl:NamedIndividual ,
+                       pwidas:Gender .
+
+
+###  http://www.vhynaulia.com/revalina/ontologies/2016/10/pwidas#Forest
+pwidas:Forest rdf:type owl:NamedIndividual ,
+                       pwidas:Natural .
+
+
+###  http://www.vhynaulia.com/revalina/ontologies/2016/10/pwidas#Humid
+pwidas:Humid rdf:type owl:NamedIndividual ,
+                      pwidas:Weather .
+
+
+###  http://www.vhynaulia.com/revalina/ontologies/2016/10/pwidas#Indonesia
+pwidas:Indonesia rdf:type owl:NamedIndividual ,
+                          pwidas:Country .
+
+
+###  http://www.vhynaulia.com/revalina/ontologies/2016/10/pwidas#Influenza
+pwidas:Influenza rdf:type owl:NamedIndividual ,
+                          pwidas:PreExistingIllness .
+
+
+###  http://www.vhynaulia.com/revalina/ontologies/2016/10/pwidas#Jean
+pwidas:Jean rdf:type owl:NamedIndividual ,
+                     pwidas:Person ;
+            pwidas:accessDuring pwidas:Summer ;
+            pwidas:hasDevelopmentStage pwidas:Adults ;
+            pwidas:hasExistingIllness pwidas:Influenza ;
+            pwidas:hasGender pwidas:Female ;
+            pwidas:liveIn pwidas:US ;
+            pwidas:reportSymptoms pwidas:Cough ;
+            pwidas:hasAgeInteger 20 .
+
+
+###  http://www.vhynaulia.com/revalina/ontologies/2016/10/pwidas#Lake
+pwidas:Lake rdf:type owl:NamedIndividual ,
+                     pwidas:ManMade .
+
+
+###  http://www.vhynaulia.com/revalina/ontologies/2016/10/pwidas#Male
+pwidas:Male rdf:type owl:NamedIndividual ,
+                     pwidas:Gender .
+
+
+###  http://www.vhynaulia.com/revalina/ontologies/2016/10/pwidas#Military
+pwidas:Military rdf:type owl:NamedIndividual ,
+                         pwidas:Profession .
+
+
+###  http://www.vhynaulia.com/revalina/ontologies/2016/10/pwidas#Nana
+pwidas:Nana rdf:type owl:NamedIndividual ,
+                     pwidas:Person ;
+            pwidas:accessDuring pwidas:Spring ,
+                                pwidas:Winter ;
+            pwidas:hasDevelopmentStage pwidas:Children ;
+            pwidas:hasGender pwidas:Female ;
+            pwidas:hasHabits pwidas:EatingPoultry ;
+            pwidas:liveAround pwidas:River ;
+            pwidas:hasAgeInteger 4 .
+
+
+###  http://www.vhynaulia.com/revalina/ontologies/2016/10/pwidas#Nausea
+pwidas:Nausea rdf:type owl:NamedIndividual ,
+                       pwidas:Symptom .
+
+
+###  http://www.vhynaulia.com/revalina/ontologies/2016/10/pwidas#Newborns
+pwidas:Newborns rdf:type owl:NamedIndividual ,
+                         pwidas:DevelopmentStage .
+
+
+###  http://www.vhynaulia.com/revalina/ontologies/2016/10/pwidas#Northern
+pwidas:Northern rdf:type owl:NamedIndividual ,
+                         pwidas:Hemisphere .
+
+
+###  http://www.vhynaulia.com/revalina/ontologies/2016/10/pwidas#Rash
+pwidas:Rash rdf:type owl:NamedIndividual ,
+                     pwidas:Symptom .
+
+
+###  http://www.vhynaulia.com/revalina/ontologies/2016/10/pwidas#River
+pwidas:River rdf:type owl:NamedIndividual ,
+                      pwidas:Natural .
+
+
+###  http://www.vhynaulia.com/revalina/ontologies/2016/10/pwidas#Rudy
+pwidas:Rudy rdf:type owl:NamedIndividual ,
+                     pwidas:Person ;
+            pwidas:accessDuring pwidas:Summer ;
+            pwidas:hasDevelopmentStage pwidas:Newborns ;
+            pwidas:hasGender pwidas:Male ;
+            pwidas:liveAround pwidas:Farms ;
+            pwidas:hasAgeInteger 0 .
+
+
+###  http://www.vhynaulia.com/revalina/ontologies/2016/10/pwidas#Sean
+pwidas:Sean rdf:type owl:NamedIndividual ,
+                     pwidas:Person ;
+            pwidas:accessDuring pwidas:Summer ;
+            pwidas:hasDevelopmentStage pwidas:Elderly ;
+            pwidas:hasGender pwidas:Male ;
+            pwidas:hasProfession pwidas:Farmers ;
+            pwidas:liveIn pwidas:US ;
+            pwidas:hasAgeInteger 80 .
+
+
+###  http://www.vhynaulia.com/revalina/ontologies/2016/10/pwidas#Smoking
+pwidas:Smoking rdf:type owl:NamedIndividual ,
+                        pwidas:Habits .
+
+
+###  http://www.vhynaulia.com/revalina/ontologies/2016/10/pwidas#SoreThroat
+pwidas:SoreThroat rdf:type owl:NamedIndividual ,
+                           pwidas:Symptom .
+
+
+###  http://www.vhynaulia.com/revalina/ontologies/2016/10/pwidas#Southern
+pwidas:Southern rdf:type owl:NamedIndividual ,
+                         pwidas:Hemisphere .
+
+
+###  http://www.vhynaulia.com/revalina/ontologies/2016/10/pwidas#Spring
+pwidas:Spring rdf:type owl:NamedIndividual ,
+                       pwidas:Environment ,
+                       pwidas:Season .
+
+
+###  http://www.vhynaulia.com/revalina/ontologies/2016/10/pwidas#Summer
+pwidas:Summer rdf:type owl:NamedIndividual ,
+                       pwidas:Environment ,
+                       pwidas:Season .
+
+
+###  http://www.vhynaulia.com/revalina/ontologies/2016/10/pwidas#Sunny
+pwidas:Sunny rdf:type owl:NamedIndividual ,
+                      pwidas:Weather .
+
+
+###  http://www.vhynaulia.com/revalina/ontologies/2016/10/pwidas#Tuberculosis
+pwidas:Tuberculosis rdf:type owl:NamedIndividual ,
+                             pwidas:InfectiousDiseases .
+
+
+###  http://www.vhynaulia.com/revalina/ontologies/2016/10/pwidas#US
+pwidas:US rdf:type owl:NamedIndividual ,
+                   pwidas:Country .
+
+
+###  http://www.vhynaulia.com/revalina/ontologies/2016/10/pwidas#Windy
+pwidas:Windy rdf:type owl:NamedIndividual ,
+                      pwidas:Weather .
+
+
+###  http://www.vhynaulia.com/revalina/ontologies/2016/10/pwidas#Winter
+pwidas:Winter rdf:type owl:NamedIndividual ,
+                       pwidas:Environment ,
+                       pwidas:Season .
+
+
+#################################################################
+#    Rules
+#################################################################
+
+pwidas:allperson rdf:type swrl:Variable .
+
+pwidas:allages rdf:type swrl:Variable .
+
+[ swrla:isRuleEnabled "true"^^xsd:boolean ;
+   rdfs:comment "Tuberculosis weather and location factors [increasing]"^^xsd:string ;
+   rdfs:label "TuberculosisEnvironmentalRisk1"^^xsd:string ;
+   rdf:type swrl:Imp ;
+   swrl:body [ rdf:type swrl:AtomList ;
+               rdf:first [ rdf:type swrl:ClassAtom ;
+                           swrl:classPredicate pwidas:Person ;
+                           swrl:argument1 pwidas:allperson
+                         ] ;
+               rdf:rest [ rdf:type swrl:AtomList ;
+                          rdf:first [ rdf:type swrl:IndividualPropertyAtom ;
+                                      swrl:propertyPredicate pwidas:liveIn ;
+                                      swrl:argument1 pwidas:allperson ;
+                                      swrl:argument2 pwidas:Indonesia
+                                    ] ;
+                          rdf:rest [ rdf:type swrl:AtomList ;
+                                     rdf:first [ rdf:type swrl:IndividualPropertyAtom ;
+                                                 swrl:propertyPredicate pwidas:accessDuring ;
+                                                 swrl:argument1 pwidas:allperson ;
+                                                 swrl:argument2 pwidas:Humid
+                                               ] ;
+                                     rdf:rest rdf:nil
+                                   ]
+                        ]
+             ] ;
+   swrl:head [ rdf:type swrl:AtomList ;
+               rdf:first [ rdf:type swrl:BuiltinAtom ;
+                           swrl:builtin <http://sqwrl.stanford.edu/ontologies/built-ins/3.4/sqwrl.owl#select> ;
+                           swrl:arguments ( pwidas:allperson
+                                          )
+                         ] ;
+               rdf:rest rdf:nil
+             ]
+ ] .
+
+[ swrla:isRuleEnabled "true"^^xsd:boolean ;
+   rdfs:comment "Anthrax season and location factors [increasing]"^^xsd:string ;
+   rdfs:label "AnthraxEnvironmentalRisk1"^^xsd:string ;
+   rdf:type swrl:Imp ;
+   swrl:body [ rdf:type swrl:AtomList ;
+               rdf:first [ rdf:type swrl:ClassAtom ;
+                           swrl:classPredicate pwidas:Person ;
+                           swrl:argument1 pwidas:allperson
+                         ] ;
+               rdf:rest [ rdf:type swrl:AtomList ;
+                          rdf:first [ rdf:type swrl:IndividualPropertyAtom ;
+                                      swrl:propertyPredicate pwidas:liveIn ;
+                                      swrl:argument1 pwidas:allperson ;
+                                      swrl:argument2 pwidas:US
+                                    ] ;
+                          rdf:rest [ rdf:type swrl:AtomList ;
+                                     rdf:first [ rdf:type swrl:IndividualPropertyAtom ;
+                                                 swrl:propertyPredicate pwidas:accessDuring ;
+                                                 swrl:argument1 pwidas:allperson ;
+                                                 swrl:argument2 pwidas:Summer
+                                               ] ;
+                                     rdf:rest rdf:nil
+                                   ]
+                        ]
+             ] ;
+   swrl:head [ rdf:type swrl:AtomList ;
+               rdf:first [ rdf:type swrl:BuiltinAtom ;
+                           swrl:builtin <http://sqwrl.stanford.edu/ontologies/built-ins/3.4/sqwrl.owl#select> ;
+                           swrl:arguments ( pwidas:allperson
+                                          )
+                         ] ;
+               rdf:rest rdf:nil
+             ]
+ ] .
+
+[ swrla:isRuleEnabled "true"^^xsd:boolean ;
+   rdfs:comment "Anthrax weather and location factors [increasing]"^^xsd:string ;
+   rdfs:label "AnthraxEnvironmentalRisk3"^^xsd:string ;
+   rdf:type swrl:Imp ;
+   swrl:body [ rdf:type swrl:AtomList ;
+               rdf:first [ rdf:type swrl:ClassAtom ;
+                           swrl:classPredicate pwidas:Person ;
+                           swrl:argument1 pwidas:allperson
+                         ] ;
+               rdf:rest [ rdf:type swrl:AtomList ;
+                          rdf:first [ rdf:type swrl:IndividualPropertyAtom ;
+                                      swrl:propertyPredicate pwidas:liveIn ;
+                                      swrl:argument1 pwidas:allperson ;
+                                      swrl:argument2 pwidas:US
+                                    ] ;
+                          rdf:rest [ rdf:type swrl:AtomList ;
+                                     rdf:first [ rdf:type swrl:IndividualPropertyAtom ;
+                                                 swrl:propertyPredicate pwidas:accessDuring ;
+                                                 swrl:argument1 pwidas:allperson ;
+                                                 swrl:argument2 pwidas:Windy
+                                               ] ;
+                                     rdf:rest rdf:nil
+                                   ]
+                        ]
+             ] ;
+   swrl:head [ rdf:type swrl:AtomList ;
+               rdf:first [ rdf:type swrl:BuiltinAtom ;
+                           swrl:builtin <http://sqwrl.stanford.edu/ontologies/built-ins/3.4/sqwrl.owl#select> ;
+                           swrl:arguments ( pwidas:allperson
+                                          )
+                         ] ;
+               rdf:rest rdf:nil
+             ]
+ ] .
+
+[ swrla:isRuleEnabled "true"^^xsd:boolean ;
+   rdfs:comment "Influenza season factors [increasing]"^^xsd:string ;
+   rdfs:label "InfluenzaEnvironmentalRisk1"^^xsd:string ;
+   rdf:type swrl:Imp ;
+   swrl:body [ rdf:type swrl:AtomList ;
+               rdf:first [ rdf:type swrl:ClassAtom ;
+                           swrl:classPredicate pwidas:Person ;
+                           swrl:argument1 pwidas:allperson
+                         ] ;
+               rdf:rest [ rdf:type swrl:AtomList ;
+                          rdf:first [ rdf:type swrl:IndividualPropertyAtom ;
+                                      swrl:propertyPredicate pwidas:accessDuring ;
+                                      swrl:argument1 pwidas:allperson ;
+                                      swrl:argument2 pwidas:Winter
+                                    ] ;
+                          rdf:rest rdf:nil
+                        ]
+             ] ;
+   swrl:head [ rdf:type swrl:AtomList ;
+               rdf:first [ rdf:type swrl:BuiltinAtom ;
+                           swrl:builtin <http://sqwrl.stanford.edu/ontologies/built-ins/3.4/sqwrl.owl#select> ;
+                           swrl:arguments ( pwidas:allperson
+                                          )
+                         ] ;
+               rdf:rest rdf:nil
+             ]
+ ] .
+
+[ swrla:isRuleEnabled "true"^^xsd:boolean ;
+   rdfs:comment "Anthrax season and location factors [set to 0]"^^xsd:string ;
+   rdfs:label "AnthraxEnvironmentalRisk2"^^xsd:string ;
+   rdf:type swrl:Imp ;
+   swrl:body [ rdf:type swrl:AtomList ;
+               rdf:first [ rdf:type swrl:ClassAtom ;
+                           swrl:classPredicate pwidas:Person ;
+                           swrl:argument1 pwidas:allperson
+                         ] ;
+               rdf:rest [ rdf:type swrl:AtomList ;
+                          rdf:first [ rdf:type swrl:IndividualPropertyAtom ;
+                                      swrl:propertyPredicate pwidas:liveIn ;
+                                      swrl:argument1 pwidas:allperson ;
+                                      swrl:argument2 pwidas:US
+                                    ] ;
+                          rdf:rest [ rdf:type swrl:AtomList ;
+                                     rdf:first [ rdf:type swrl:IndividualPropertyAtom ;
+                                                 swrl:propertyPredicate pwidas:accessDuring ;
+                                                 swrl:argument1 pwidas:allperson ;
+                                                 swrl:argument2 pwidas:Winter
+                                               ] ;
+                                     rdf:rest rdf:nil
+                                   ]
+                        ]
+             ] ;
+   swrl:head [ rdf:type swrl:AtomList ;
+               rdf:first [ rdf:type swrl:BuiltinAtom ;
+                           swrl:builtin <http://sqwrl.stanford.edu/ontologies/built-ins/3.4/sqwrl.owl#select> ;
+                           swrl:arguments ( pwidas:allperson
+                                          )
+                         ] ;
+               rdf:rest rdf:nil
+             ]
+ ] .
+
+[ swrla:isRuleEnabled "true"^^xsd:boolean ;
+   rdfs:comment "Tuberculosis risk to adults"^^xsd:string ;
+   rdfs:label "TuberculosisRisk3"^^xsd:string ;
+   rdf:type swrl:Imp ;
+   swrl:body [ rdf:type swrl:AtomList ;
+               rdf:first [ rdf:type swrl:ClassAtom ;
+                           swrl:classPredicate pwidas:Person ;
+                           swrl:argument1 pwidas:allperson
+                         ] ;
+               rdf:rest [ rdf:type swrl:AtomList ;
+                          rdf:first [ rdf:type swrl:IndividualPropertyAtom ;
+                                      swrl:propertyPredicate pwidas:hasDevelopmentStage ;
+                                      swrl:argument1 pwidas:allperson ;
+                                      swrl:argument2 pwidas:Adults
+                                    ] ;
+                          rdf:rest rdf:nil
+                        ]
+             ] ;
+   swrl:head [ rdf:type swrl:AtomList ;
+               rdf:first [ rdf:type swrl:BuiltinAtom ;
+                           swrl:builtin <http://sqwrl.stanford.edu/ontologies/built-ins/3.4/sqwrl.owl#select> ;
+                           swrl:arguments ( pwidas:allperson
+                                          )
+                         ] ;
+               rdf:rest rdf:nil
+             ]
+ ] .
+
+[ swrla:isRuleEnabled "true"^^xsd:boolean ;
+   rdfs:comment "Anthrax risk to existing illness, symptoms"^^xsd:string ;
+   rdfs:label "AnthraxRisk2"^^xsd:string ;
+   rdf:type swrl:Imp ;
+   swrl:body [ rdf:type swrl:AtomList ;
+               rdf:first [ rdf:type swrl:ClassAtom ;
+                           swrl:classPredicate pwidas:Person ;
+                           swrl:argument1 pwidas:allperson
+                         ] ;
+               rdf:rest [ rdf:type swrl:AtomList ;
+                          rdf:first [ rdf:type swrl:IndividualPropertyAtom ;
+                                      swrl:propertyPredicate pwidas:hasExistingIllness ;
+                                      swrl:argument1 pwidas:allperson ;
+                                      swrl:argument2 pwidas:Influenza
+                                    ] ;
+                          rdf:rest [ rdf:type swrl:AtomList ;
+                                     rdf:first [ rdf:type swrl:IndividualPropertyAtom ;
+                                                 swrl:propertyPredicate pwidas:reportSymptoms ;
+                                                 swrl:argument1 pwidas:allperson ;
+                                                 swrl:argument2 pwidas:Cough
+                                               ] ;
+                                     rdf:rest rdf:nil
+                                   ]
+                        ]
+             ] ;
+   swrl:head [ rdf:type swrl:AtomList ;
+               rdf:first [ rdf:type swrl:BuiltinAtom ;
+                           swrl:builtin <http://sqwrl.stanford.edu/ontologies/built-ins/3.4/sqwrl.owl#select> ;
+                           swrl:arguments ( pwidas:allperson
+                                          )
+                         ] ;
+               rdf:rest rdf:nil
+             ]
+ ] .
+
+[ swrla:isRuleEnabled "true"^^xsd:boolean ;
+   rdfs:comment "Tuberculosis risk to males"^^xsd:string ;
+   rdfs:label "TuberculosisRisk4"^^xsd:string ;
+   rdf:type swrl:Imp ;
+   swrl:body [ rdf:type swrl:AtomList ;
+               rdf:first [ rdf:type swrl:ClassAtom ;
+                           swrl:classPredicate pwidas:Person ;
+                           swrl:argument1 pwidas:allperson
+                         ] ;
+               rdf:rest [ rdf:type swrl:AtomList ;
+                          rdf:first [ rdf:type swrl:IndividualPropertyAtom ;
+                                      swrl:propertyPredicate pwidas:hasGender ;
+                                      swrl:argument1 pwidas:allperson ;
+                                      swrl:argument2 pwidas:Male
+                                    ] ;
+                          rdf:rest rdf:nil
+                        ]
+             ] ;
+   swrl:head [ rdf:type swrl:AtomList ;
+               rdf:first [ rdf:type swrl:BuiltinAtom ;
+                           swrl:builtin <http://sqwrl.stanford.edu/ontologies/built-ins/3.4/sqwrl.owl#select> ;
+                           swrl:arguments ( pwidas:allperson
+                                          )
+                         ] ;
+               rdf:rest rdf:nil
+             ]
+ ] .
+
+[ swrla:isRuleEnabled "true"^^xsd:boolean ;
+   rdfs:comment "Anthrax risk to non-vegan"^^xsd:string ;
+   rdfs:label "AnthraxRisk4"^^xsd:string ;
+   rdf:type swrl:Imp ;
+   swrl:body [ rdf:type swrl:AtomList ;
+               rdf:first [ rdf:type swrl:ClassAtom ;
+                           swrl:classPredicate pwidas:Person ;
+                           swrl:argument1 pwidas:allperson
+                         ] ;
+               rdf:rest [ rdf:type swrl:AtomList ;
+                          rdf:first [ rdf:type swrl:IndividualPropertyAtom ;
+                                      swrl:propertyPredicate pwidas:hasHabits ;
+                                      swrl:argument1 pwidas:allperson ;
+                                      swrl:argument2 pwidas:EatingMeats
+                                    ] ;
+                          rdf:rest rdf:nil
+                        ]
+             ] ;
+   swrl:head [ rdf:type swrl:AtomList ;
+               rdf:first [ rdf:type swrl:BuiltinAtom ;
+                           swrl:builtin <http://sqwrl.stanford.edu/ontologies/built-ins/3.4/sqwrl.owl#select> ;
+                           swrl:arguments ( pwidas:allperson
+                                          )
+                         ] ;
+               rdf:rest rdf:nil
+             ]
+ ] .
+
+[ swrla:isRuleEnabled "true"^^xsd:boolean ;
+   rdfs:comment "Influenza risk to non-vegan"^^xsd:string ;
+   rdfs:label "InfluenzaRisk2"^^xsd:string ;
+   rdf:type swrl:Imp ;
+   swrl:body [ rdf:type swrl:AtomList ;
+               rdf:first [ rdf:type swrl:ClassAtom ;
+                           swrl:classPredicate pwidas:Person ;
+                           swrl:argument1 pwidas:allperson
+                         ] ;
+               rdf:rest [ rdf:type swrl:AtomList ;
+                          rdf:first [ rdf:type swrl:IndividualPropertyAtom ;
+                                      swrl:propertyPredicate pwidas:hasHabits ;
+                                      swrl:argument1 pwidas:allperson ;
+                                      swrl:argument2 pwidas:EatingPoultry
+                                    ] ;
+                          rdf:rest rdf:nil
+                        ]
+             ] ;
+   swrl:head [ rdf:type swrl:AtomList ;
+               rdf:first [ rdf:type swrl:BuiltinAtom ;
+                           swrl:builtin <http://sqwrl.stanford.edu/ontologies/built-ins/3.4/sqwrl.owl#select> ;
+                           swrl:arguments ( pwidas:allperson
+                                          )
+                         ] ;
+               rdf:rest rdf:nil
+             ]
+ ] .
+
+[ swrla:isRuleEnabled "true"^^xsd:boolean ;
+   rdfs:comment "Tuberculosis risk to smoker"^^xsd:string ;
+   rdfs:label "TuberculosisRisk2"^^xsd:string ;
+   rdf:type swrl:Imp ;
+   swrl:body [ rdf:type swrl:AtomList ;
+               rdf:first [ rdf:type swrl:ClassAtom ;
+                           swrl:classPredicate pwidas:Person ;
+                           swrl:argument1 pwidas:allperson
+                         ] ;
+               rdf:rest [ rdf:type swrl:AtomList ;
+                          rdf:first [ rdf:type swrl:IndividualPropertyAtom ;
+                                      swrl:propertyPredicate pwidas:hasHabits ;
+                                      swrl:argument1 pwidas:allperson ;
+                                      swrl:argument2 pwidas:Smoking
+                                    ] ;
+                          rdf:rest rdf:nil
+                        ]
+             ] ;
+   swrl:head [ rdf:type swrl:AtomList ;
+               rdf:first [ rdf:type swrl:BuiltinAtom ;
+                           swrl:builtin <http://sqwrl.stanford.edu/ontologies/built-ins/3.4/sqwrl.owl#select> ;
+                           swrl:arguments ( pwidas:allperson
+                                          )
+                         ] ;
+               rdf:rest rdf:nil
+             ]
+ ] .
+
+[ swrla:isRuleEnabled "true"^^xsd:boolean ;
+   rdfs:comment "Anthrax risk to profession"^^xsd:string ;
+   rdfs:label "AnthraxRisk1"^^xsd:string ;
+   rdf:type swrl:Imp ;
+   swrl:body [ rdf:type swrl:AtomList ;
+               rdf:first [ rdf:type swrl:ClassAtom ;
+                           swrl:classPredicate pwidas:Person ;
+                           swrl:argument1 pwidas:allperson
+                         ] ;
+               rdf:rest [ rdf:type swrl:AtomList ;
+                          rdf:first [ rdf:type swrl:IndividualPropertyAtom ;
+                                      swrl:propertyPredicate pwidas:hasProfession ;
+                                      swrl:argument1 pwidas:allperson ;
+                                      swrl:argument2 pwidas:Farmers
+                                    ] ;
+                          rdf:rest rdf:nil
+                        ]
+             ] ;
+   swrl:head [ rdf:type swrl:AtomList ;
+               rdf:first [ rdf:type swrl:BuiltinAtom ;
+                           swrl:builtin <http://sqwrl.stanford.edu/ontologies/built-ins/3.4/sqwrl.owl#select> ;
+                           swrl:arguments ( pwidas:allperson
+                                          )
+                         ] ;
+               rdf:rest rdf:nil
+             ]
+ ] .
+
+[ swrla:isRuleEnabled "true"^^xsd:boolean ;
+   rdfs:comment "Tuberculosis risk to military person"^^xsd:string ;
+   rdfs:label "TuberculosisRisk1"^^xsd:string ;
+   rdf:type swrl:Imp ;
+   swrl:body [ rdf:type swrl:AtomList ;
+               rdf:first [ rdf:type swrl:ClassAtom ;
+                           swrl:classPredicate pwidas:Person ;
+                           swrl:argument1 pwidas:allperson
+                         ] ;
+               rdf:rest [ rdf:type swrl:AtomList ;
+                          rdf:first [ rdf:type swrl:IndividualPropertyAtom ;
+                                      swrl:propertyPredicate pwidas:hasProfession ;
+                                      swrl:argument1 pwidas:allperson ;
+                                      swrl:argument2 pwidas:Military
+                                    ] ;
+                          rdf:rest rdf:nil
+                        ]
+             ] ;
+   swrl:head [ rdf:type swrl:AtomList ;
+               rdf:first [ rdf:type swrl:BuiltinAtom ;
+                           swrl:builtin <http://sqwrl.stanford.edu/ontologies/built-ins/3.4/sqwrl.owl#select> ;
+                           swrl:arguments ( pwidas:allperson
+                                          )
+                         ] ;
+               rdf:rest rdf:nil
+             ]
+ ] .
+
+[ swrla:isRuleEnabled "true"^^xsd:boolean ;
+   rdfs:comment "Anthrax risk to around farms"^^xsd:string ;
+   rdfs:label "AnthraxRisk3"^^xsd:string ;
+   rdf:type swrl:Imp ;
+   swrl:body [ rdf:type swrl:AtomList ;
+               rdf:first [ rdf:type swrl:ClassAtom ;
+                           swrl:classPredicate pwidas:Person ;
+                           swrl:argument1 pwidas:allperson
+                         ] ;
+               rdf:rest [ rdf:type swrl:AtomList ;
+                          rdf:first [ rdf:type swrl:IndividualPropertyAtom ;
+                                      swrl:propertyPredicate pwidas:liveAround ;
+                                      swrl:argument1 pwidas:allperson ;
+                                      swrl:argument2 pwidas:Farms
+                                    ] ;
+                          rdf:rest rdf:nil
+                        ]
+             ] ;
+   swrl:head [ rdf:type swrl:AtomList ;
+               rdf:first [ rdf:type swrl:BuiltinAtom ;
+                           swrl:builtin <http://sqwrl.stanford.edu/ontologies/built-ins/3.4/sqwrl.owl#select> ;
+                           swrl:arguments ( pwidas:allperson
+                                          )
+                         ] ;
+               rdf:rest rdf:nil
+             ]
+ ] .
+
+[ swrla:isRuleEnabled "true"^^xsd:boolean ;
+   rdfs:comment "Influenza risk to children"^^xsd:string ;
+   rdfs:label "InfluenzaRisk1"^^xsd:string ;
+   rdf:type swrl:Imp ;
+   swrl:body [ rdf:type swrl:AtomList ;
+               rdf:first [ rdf:type swrl:ClassAtom ;
+                           swrl:classPredicate pwidas:Person ;
+                           swrl:argument1 pwidas:allperson
+                         ] ;
+               rdf:rest [ rdf:type swrl:AtomList ;
+                          rdf:first [ rdf:type swrl:DatavaluedPropertyAtom ;
+                                      swrl:propertyPredicate pwidas:hasAgeInteger ;
+                                      swrl:argument1 pwidas:allperson ;
+                                      swrl:argument2 pwidas:allages
+                                    ] ;
+                          rdf:rest [ rdf:type swrl:AtomList ;
+                                     rdf:first [ rdf:type swrl:BuiltinAtom ;
+                                                 swrl:builtin swrlb:lessThan ;
+                                                 swrl:arguments [ rdf:type rdf:List ;
+                                                                  rdf:first pwidas:allages ;
+                                                                  rdf:rest [ rdf:type rdf:List ;
+                                                                             rdf:first "5"^^xsd:int ;
+                                                                             rdf:rest rdf:nil
+                                                                           ]
+                                                                ]
+                                               ] ;
+                                     rdf:rest rdf:nil
+                                   ]
+                        ]
+             ] ;
+   swrl:head [ rdf:type swrl:AtomList ;
+               rdf:first [ rdf:type swrl:BuiltinAtom ;
+                           swrl:builtin <http://sqwrl.stanford.edu/ontologies/built-ins/3.4/sqwrl.owl#select> ;
+                           swrl:arguments ( pwidas:allperson
+                                            pwidas:allages
+                                          )
+                         ] ;
+               rdf:rest rdf:nil
+             ]
+ ] .
+
+###  Generated by the OWL API (version 4.2.6.20160910-2108) https://github.com/owlcs/owlapi

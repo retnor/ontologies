@@ -1,0 +1,199 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.semanticweb.org/revalina/ontologies/2017/5/untitled-ontology-58#"
+     xml:base="http://www.semanticweb.org/revalina/ontologies/2017/5/untitled-ontology-58"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:swrlb="http://www.w3.org/2003/11/swrlb#"
+     xmlns:swrl="http://www.w3.org/2003/11/swrl#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:untitled-ontology-58="http://www.semanticweb.org/revalina/ontologies/2017/5/untitled-ontology-58#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:swrla="http://swrl.stanford.edu/ontologies/3.3/swrla.owl#">
+    <owl:Ontology rdf:about="http://www.semanticweb.org/revalina/ontologies/2017/5/untitled-ontology-58"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled -->
+
+    <owl:AnnotationProperty rdf:about="http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/revalina/ontologies/2017/5/untitled-ontology-58#hasPreviledge -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/revalina/ontologies/2017/5/untitled-ontology-58#hasPreviledge">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/revalina/ontologies/2017/5/untitled-ontology-58#Owner"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/revalina/ontologies/2017/5/untitled-ontology-58#Previledge"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/revalina/ontologies/2017/5/untitled-ontology-58#requestTo -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/revalina/ontologies/2017/5/untitled-ontology-58#requestTo">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/revalina/ontologies/2017/5/untitled-ontology-58#Requester"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/revalina/ontologies/2017/5/untitled-ontology-58#Owner"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/revalina/ontologies/2017/5/untitled-ontology-58#Owner -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/revalina/ontologies/2017/5/untitled-ontology-58#Owner"/>
+    
+
+
+    <!-- http://www.semanticweb.org/revalina/ontologies/2017/5/untitled-ontology-58#Previledge -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/revalina/ontologies/2017/5/untitled-ontology-58#Previledge"/>
+    
+
+
+    <!-- http://www.semanticweb.org/revalina/ontologies/2017/5/untitled-ontology-58#Requester -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/revalina/ontologies/2017/5/untitled-ontology-58#Requester"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/revalina/ontologies/2017/5/untitled-ontology-58#Grant -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/revalina/ontologies/2017/5/untitled-ontology-58#Grant">
+        <rdf:type rdf:resource="http://www.semanticweb.org/revalina/ontologies/2017/5/untitled-ontology-58#Previledge"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/revalina/ontologies/2017/5/untitled-ontology-58#NotGranted -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/revalina/ontologies/2017/5/untitled-ontology-58#NotGranted">
+        <rdf:type rdf:resource="http://www.semanticweb.org/revalina/ontologies/2017/5/untitled-ontology-58#Previledge"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/revalina/ontologies/2017/5/untitled-ontology-58#School -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/revalina/ontologies/2017/5/untitled-ontology-58#School">
+        <rdf:type rdf:resource="http://www.semanticweb.org/revalina/ontologies/2017/5/untitled-ontology-58#Requester"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/revalina/ontologies/2017/5/untitled-ontology-58#owen -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/revalina/ontologies/2017/5/untitled-ontology-58#owen">
+        <rdf:type rdf:resource="http://www.semanticweb.org/revalina/ontologies/2017/5/untitled-ontology-58#Owner"/>
+        <hasPreviledge rdf:resource="http://www.semanticweb.org/revalina/ontologies/2017/5/untitled-ontology-58#Grant"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Rules
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description rdf:about="all">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description>
+        <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla:isRuleEnabled>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">S2</rdfs:label>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="http://www.semanticweb.org/revalina/ontologies/2017/5/untitled-ontology-58#Owner"/>
+                        <swrl:argument1 rdf:resource="all"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/revalina/ontologies/2017/5/untitled-ontology-58#hasPreviledge"/>
+                                <swrl:argument1 rdf:resource="all"/>
+                                <swrl:argument2 rdf:resource="http://www.semanticweb.org/revalina/ontologies/2017/5/untitled-ontology-58#Grant"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#BuiltinAtom"/>
+                        <swrl:builtin rdf:resource="http://sqwrl.stanford.edu/ontologies/built-ins/3.4/sqwrl.owl#select"/>
+                        <swrl:arguments rdf:parseType="Collection">
+                            <rdf:Description rdf:about="all"/>
+                        </swrl:arguments>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.2.6.20160910-2108) https://github.com/owlcs/owlapi -->
+
